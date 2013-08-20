@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict>
+		<key>09FEE4F3-274F-4C80-88CB-9EA3A20ADDBD</key>
+		<array/>
+		<key>1A9D5CE2-127E-4548-BB58-113CF364395E</key>
+		<array/>
+		<key>47048C47-0100-4316-B934-FCFD9F00FFF9</key>
+		<array/>
+		<key>6BE95EE4-66F5-4AE0-97C7-D8FCDCE12A18</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>09FEE4F3-274F-4C80-88CB-9EA3A20ADDBD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>CAC7CF21-BFA8-466A-B0D6-F0B30EB5ED92</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1A9D5CE2-127E-4548-BB58-113CF364395E</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>D5FFE611-46DA-4B0E-B823-B464B4F99893</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>47048C47-0100-4316-B934-FCFD9F00FFF9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>zellux</string>
+	<key>description</key>
+	<string>Adjust your Mac volume with hotkeys</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Adjust Volume</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	set current to output volume of (get volume settings)
+	set newval to current + 10
+	if newval &gt; 100 then
+		set newval to 100
+	end if
+	set volume output volume (newval)
+	do shell script "afplay /System/Library/Sounds/Frog.aiff"
+	return newval
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>09FEE4F3-274F-4C80-88CB-9EA3A20ADDBD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>111</integer>
+				<key>hotmod</key>
+				<integer>8912896</integer>
+				<key>hotstring</key>
+				<string>F12</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>6BE95EE4-66F5-4AE0-97C7-D8FCDCE12A18</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Current volume: {query}</string>
+				<key>title</key>
+				<string>Volume changed</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>629008B9-E91B-4CF5-93E2-08FD157392B8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Current volume: {query}</string>
+				<key>title</key>
+				<string>Volume changed</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>922A2DBE-4C27-4B0F-A862-CE2619AEE937</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>103</integer>
+				<key>hotmod</key>
+				<integer>8912896</integer>
+				<key>hotstring</key>
+				<string>F11</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>CAC7CF21-BFA8-466A-B0D6-F0B30EB5ED92</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	set current to output volume of (get volume settings)
+	set newval to current - 10
+	if newval &lt; 0 then
+		set newval to 0
+	end if
+	set volume output volume (newval)
+	do shell script "afplay /System/Library/Sounds/Frog.aiff"
+	return newval
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>1A9D5CE2-127E-4548-BB58-113CF364395E</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>Volumn {query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>11936CF5-7769-45D9-B868-0FD0D07D37F0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>hotkey</key>
+				<integer>109</integer>
+				<key>hotmod</key>
+				<integer>8912896</integer>
+				<key>hotstring</key>
+				<string>F10</string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>D5FFE611-46DA-4B0E-B823-B464B4F99893</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+	set muted to output muted of (get volume settings)	if muted is false then		set volume with output muted
+		return "muted"	else		set volume without output muted
+		return "unmuted"	end if
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>47048C47-0100-4316-B934-FCFD9F00FFF9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Hotkeys
+
+- Alt + F12: Volume up by 10%
+- Alt + F11: Volume down by 10%
+- Alt + F10: Mute / Unmute</string>
+	<key>uidata</key>
+	<dict>
+		<key>09FEE4F3-274F-4C80-88CB-9EA3A20ADDBD</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>11936CF5-7769-45D9-B868-0FD0D07D37F0</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>1A9D5CE2-127E-4548-BB58-113CF364395E</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>47048C47-0100-4316-B934-FCFD9F00FFF9</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>629008B9-E91B-4CF5-93E2-08FD157392B8</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>6BE95EE4-66F5-4AE0-97C7-D8FCDCE12A18</key>
+		<dict>
+			<key>ypos</key>
+			<real>60</real>
+		</dict>
+		<key>922A2DBE-4C27-4B0F-A862-CE2619AEE937</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>CAC7CF21-BFA8-466A-B0D6-F0B30EB5ED92</key>
+		<dict>
+			<key>ypos</key>
+			<real>180</real>
+		</dict>
+		<key>D5FFE611-46DA-4B0E-B823-B464B4F99893</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://blog.yxwang.me/</string>
+</dict>
+</plist>
